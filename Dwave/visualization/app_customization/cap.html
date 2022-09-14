@@ -1,0 +1,21 @@
+<div class="solution-results">
+  <div>
+        <h2>Vehicle and Capacity Summary</h2>
+      <table class="tab">
+        <thead>
+          <tr>
+            <th>Vehicle</th> <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {% for item in cap_list.items() -%}
+            <tr>
+              <td>{{item[0]}}</td> <td>{{item[1]}}</td>
+            </tr>
+            {% endfor -%}         
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="solution-results solution-cost">
+  <h2>Vehicle Wise Summary</h2>
+  <h4>This section summarizes the total distance traveled, the number of customers visited, and the total quantity of demand delivered by each vehicle</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Vehicle</th> <th>Distance Travelled (m)</th> <th>Locations Serviced</th> <th>Water</th> <th>Food</th> <th>Other Supplies</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for vehicle_id, cost_info in solution_cost_information.items() -%}
+      <tr>
+        <td>{{vehicle_id}}</td> <td>{{"{:.0f}".format(cost_info["optimized_cost"])}}</td> <td>{{cost_info["forces_serviced"]}}</td> <td>{{cost_info["water"]}}</td> <td>{{cost_info["food"]}}</td> <td>{{cost_info["other"]}}</td>
+      </tr>
+    {% endfor -%}
+    <tr class ="totals">
+        <td>Total</td> <td>{{"{:.0f}".format(total_cost_information["optimized_cost"])}}</td> <td>{{total_cost_information["forces_serviced"]}}</td> <td>{{total_cost_information["water"]}}</td> <td>{{total_cost_information["food"]}}</td> <td>{{total_cost_information["other"]}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
